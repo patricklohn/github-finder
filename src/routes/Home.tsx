@@ -12,6 +12,8 @@ const Home = () => {
   const [messageError, setMessageError] = useState<string>("");
 
   const loadUser = async(userName: string) =>{
+    setError(false)
+    setUser(null)
     try {
       const res = await gitHub.get(`users/${userName}`)
 
