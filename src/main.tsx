@@ -8,6 +8,7 @@ import App from './App.tsx'
 
 import ErrorPage from './routes/ErrorPage.tsx'
 import Home from './routes/Home.tsx'
+import Repos from './routes/Repos.tsx'
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home/>
+      },
+      {
+        path: "/repos/:username",
+        element: <Repos/>,
       },
     ]
   }
