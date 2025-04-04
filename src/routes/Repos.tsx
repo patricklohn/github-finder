@@ -20,9 +20,13 @@ const Repos =  () => {
         //const res = await fetch(`https://api.github.com/users/${username}/repos`)
         //const data = await res.json() 
 
-        if(res){
-          setRepos(res.data);
-        }
+        let orderedRepos = res.data.sort((a: RepoPros, b: RepoPros) =>{
+          b.stargazers_count - a.stargazers_count
+        })
+
+        orderedRepos = orderedRepos.slice(0, 10);
+
+        setRepos(orderedRepos);
 
         setIsLoading(false)
       }
